@@ -78,6 +78,7 @@ model Product {
   store             Store       @relation(fields: [storeId], references: [id], onDelete: Cascade)
   storeId           String
   price             Int         @default(0)
+  content           String?
   discountRate      Int         @default(0)
   discountStartTime DateTime?
   discountEndTime   DateTime?
@@ -104,6 +105,7 @@ model Stock {
   size      Size    @relation(fields: [sizeId], references: [id])
   sizeId    String
   quantity  Int     @default(0)
+  @@unique([productId, sizeId])
 }
 
 model Size {

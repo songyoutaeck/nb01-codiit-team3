@@ -20,6 +20,7 @@ export type RegisterUserInput = {
   name: string;
   image?: string | null;
   type: UserType;
+  gradeId?: string;
 };
 
 export default User;
